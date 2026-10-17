@@ -6,7 +6,7 @@ En esta parte uso los resultados del diagnóstico para elegir las estrategias de
 
 **Objetivo planteado**
 
-Todas las estrategias apuntan a un mismo objetivo: volver a tener unos 500 alumnos en los meses de más demanda de 2028, mejorando el cumplimiento de los profesores. Elegí este objetivo porque el diagnóstico mostró dos problemas principales, la falta de inscripciones y las faltas y tardanzas de algunos docentes. Por mi experiencia en la empresa, la cantidad de alumnos es lo que más mueve los ingresos. Entre 2020 y 2022 llegamos a unos S/400 000 al mes y hoy estamos cerca de S/230 000.
+Todas las estrategias apuntan a un mismo objetivo: volver a tener unos 500 alumnos en octubre y noviembre de 2028, mejorando el cumplimiento de los profesores. Son los meses de más demanda, porque los padres buscan clases para que sus hijos no desaprueben el año escolar. Elegí este objetivo porque el diagnóstico mostró dos problemas principales, la falta de inscripciones y las faltas y tardanzas de algunos docentes. Por mi experiencia en la empresa, la cantidad de alumnos es lo que más mueve los ingresos. Entre 2020 y 2022 llegamos a unos S/400 000 al mes y hoy estamos cerca de S/230 000.
 
 ## 3.1. Matriz FODA cruzada
 
@@ -29,12 +29,12 @@ En la Tabla 9 explico de qué tipo es cada estrategia y cómo ayuda a llegar al 
 
 | Cód. | Tipo de estrategia | Cómo ayuda al objetivo |
 |---|---|---|
-| E1 | Desarrollo de productos | Solo el 12.8 % de los alumnos de quinto de secundaria logra el nivel esperado en matemática (Ministerio de Educación, 2026). Un programa por grado, con metas que los padres entienden, es más fácil de vender que horas sueltas y trae alumnos nuevos. |
+| E1 | Desarrollo de productos | Solo el 12.8 % de los alumnos de quinto de secundaria logra el nivel esperado en matemática (Ministerio de Educación, 2026). Por mi experiencia, en octubre y noviembre los padres buscan sobre todo que sus hijos no desaprueben. Un programa por grado, con metas que los padres entienden, es más fácil de vender que horas sueltas y trae alumnos nuevos. |
 | E2 | Penetración de mercado | El 96 % de los hogares tiene internet (Forbes Perú, 2026). La empresa ya probó un examen de diagnóstico con inteligencia artificial. Terminarlo y usarlo como puerta de entrada convierte más visitas en clases de prueba. |
-| E3 | Desarrollo de mercados | Las clases son virtuales, así que no hace falta abrir sedes. Campañas para otras ciudades abren un grupo nuevo de familias. |
+| E3 | Desarrollo de mercados | Por mi experiencia, cerca del 90 % de los alumnos son de Lima. Las clases son virtuales, así que no hace falta abrir sedes para llegar a familias de otras ciudades. |
 | E4 | Interna, reingeniería de procesos | Por mi experiencia, se pierden interesados porque nadie les hace seguimiento. Con un solo proceso y metas por asesor, más consultas terminan en inscripción. |
 | E5 | Interna, calidad total | Ataca de forma directa la segunda parte del objetivo. Los datos de cada clase ya se guardan, solo falta convertirlos en indicadores por profesor. |
-| E6 | Alianza estratégica | Una alianza con un colegio o una empresa trae varios alumnos a la vez. Además reactiva la línea para empresas, que hoy está en pausa. |
+| E6 | Alianza estratégica | Una alianza con un colegio o una empresa trae varios alumnos a la vez. Además reactiva la línea para empresas, que hoy está en pausa por motivos externos a la empresa. |
 | E7 | Diferenciación | Ninguna plataforma ni herramienta de inteligencia artificial da un asesor que siga al alumno y un reporte a los padres después de cada clase. Mostrarlo en la venta ayuda a cerrar más inscripciones. |
 | E8 | Interna, recursos humanos | Si los buenos profesores tienen razones para quedarse, no se van a otras academias y el servicio se mantiene estable. |
 | E9 | Interna, recursos humanos | Si un profesor falta, la clase igual se dicta. Así el cliente no ve el problema y no se retira. |
