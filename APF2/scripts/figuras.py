@@ -1,7 +1,12 @@
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-plt.rcParams['font.family'] = 'DejaVu Serif'
+import sys
+PPT = len(sys.argv) > 1 and sys.argv[1] == 'ppt'
+plt.rcParams['font.family'] = 'DejaVu Sans' if PPT else 'DejaVu Serif'
+ROJO = '#2E86C1' if PPT else '#c8102e'
+AZUL = '#071D36' if PPT else '#1f3b73'
+SUF = '_ppt' if PPT else ''
 
 # PEYEA
 fig, ax = plt.subplots(figsize=(6, 6))
@@ -11,17 +16,17 @@ ax.set_xticks(range(-6, 7)); ax.set_yticks(range(-6, 7))
 ax.grid(color='#dddddd', lw=0.5)
 for x, y, t in [(-3, 4.5, 'Conservador'), (3, 4.5, 'Agresivo'), (-3, -4.5, 'Defensivo'), (3, -4.5, 'Competitivo')]:
     ax.text(x, y, t, ha='center', fontsize=12, weight='bold', color='#444')
-ax.fill([0, 3.5, 0, -3.33], [4.40, 0, -3.33, 0], color='#c8102e', alpha=0.08)
-ax.plot([0, 3.5, 0, -3.33, 0], [4.40, 0, -3.33, 0, 4.40], color='#c8102e', lw=1)
-ax.annotate('', xy=(0.17, 1.07), xytext=(0, 0), arrowprops=dict(arrowstyle='-|>', color='#1f3b73', lw=2.2))
-ax.plot([0.17, 0.17], [0, 1.07], ls='--', color='#c8102e', lw=1)
-ax.plot([0, 0.17], [1.07, 1.07], ls='--', color='#c8102e', lw=1)
-ax.text(0.35, 1.15, '(0.17, 1.07)', fontsize=10, color='#1f3b73')
+ax.fill([0, 3.5, 0, -3.33], [4.40, 0, -3.33, 0], color=ROJO, alpha=0.08)
+ax.plot([0, 3.5, 0, -3.33, 0], [4.40, 0, -3.33, 0, 4.40], color=ROJO, lw=1)
+ax.annotate('', xy=(0.17, 1.07), xytext=(0, 0), arrowprops=dict(arrowstyle='-|>', color=AZUL, lw=2.2))
+ax.plot([0.17, 0.17], [0, 1.07], ls='--', color=ROJO, lw=1)
+ax.plot([0, 0.17], [1.07, 1.07], ls='--', color=ROJO, lw=1)
+ax.text(0.35, 1.15, '(0.17, 1.07)', fontsize=10, color=AZUL)
 ax.text(0.15, 5.45, 'Fortaleza financiera FF\nAlto', fontsize=9)
 ax.text(0.15, -5.85, 'Estabilidad del entorno EE\nBajo', fontsize=9)
 ax.text(5.9, 0.25, 'Fortaleza de la\nindustria FI · Alto', fontsize=9, ha='right')
 ax.text(-5.9, 0.25, 'Ventaja\ncompetitiva VC · Bajo', fontsize=9)
-fig.tight_layout(); fig.savefig('figuras/peyea.png', dpi=200)
+fig.tight_layout(); fig.savefig(f'figuras/peyea{SUF}.png', dpi=200)
 
 # BCG
 fig, ax = plt.subplots(figsize=(6, 5.2))
@@ -33,6 +38,6 @@ ax.set_xlabel('Cuota de mercado relativa'); ax.set_ylabel('Tasa de crecimiento d
 for x, y, t in [(0.5, 1.95, 'Estrella'), (1.5, 1.95, 'Interrogante'), (0.5, 0.95, 'Vaca'), (1.5, 0.95, 'Perro')]:
     ax.text(x, y, t, ha='center', va='top', fontsize=12, weight='bold', color='#444')
 for x, y, s, t in [(0.33, 0.45, 60, 'Clases individuales\n60 %'), (0.72, 0.22, 30, 'Programas de verano\n30 %'), (1.5, 1.4, 10, 'Talleres y empresas\n10 %')]:
-    ax.scatter(x, y, s=s * 40, color='#c8102e', alpha=0.3, edgecolor='#c8102e')
+    ax.scatter(x, y, s=s * 40, color=ROJO, alpha=0.3, edgecolor=ROJO)
     ax.text(x, y, t, ha='center', va='center', fontsize=9)
-fig.tight_layout(); fig.savefig('figuras/bcg.png', dpi=200)
+fig.tight_layout(); fig.savefig(f'figuras/bcg{SUF}.png', dpi=200)
