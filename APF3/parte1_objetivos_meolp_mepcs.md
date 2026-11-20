@@ -20,7 +20,7 @@ Los objetivos de largo plazo son los resultados que la empresa quiere lograr con
 | Promedio de octubre y noviembre | 288 | (280 + 296) / 2 |
 | Ingresos promedio al mes | S/230 000 | Dato interno aproximado |
 | Clases con falta, tardanza o cámara apagada | 25 de cada 100 | 12 o 13 faltas, 10 tardanzas y hasta 3 de cámara apagada |
-| Interesados que se inscriben | 10 % | Dato del área de ventas, aproximado |
+| Interesados que compran un paquete | 3 de cada 100 | Dato del área de ventas, aproximado |
 | Profesores que se van al año | 10 de 27, 37 % | 10 / 27 = 0.37 |
 
 *Nota.* Elaboración propia con datos internos aproximados de MatLab Perú.
@@ -55,7 +55,7 @@ En 2027 la meta es 25 × 0.447 = 11 de cada 100, y en 2028, 11 × 0.447 = 5 de c
 | OLP | Objetivo de corto plazo | Cálculo que lo respalda | Estrategia |
 |---|---|---|---|
 | **OLP1.** 500 alumnos en octubre y noviembre de 2028 | **OCP1.1.** Tener 380 alumnos en octubre y noviembre de 2027 | 288 × 1.318 = 380 | E1, E2, E10 |
-| | **OCP1.2.** Subir la inscripción de interesados de 10 % a 13 % en 2027 y a 17 % en 2028 | Si llegan los mismos interesados, la inscripción debe crecer al mismo 31.8 %: 10 × 1.318 = 13 y 13 × 1.318 = 17 | E2 |
+| | **OCP1.2.** Subir los interesados que compran de 3 a 4 de cada 100 en 2027 y a 5.2 de cada 100 en 2028 | Si llegan los mismos interesados, las compras deben crecer al mismo 31.8 %: 3 × 1.318 = 4 y 4 × 1.318 = 5.2 | E2 |
 | | **OCP1.3.** Tener 50 alumnos en nivelación y 40 en grupos en octubre y noviembre de 2027, y 100 y 80 en 2028 | De 288 a 380 faltan 92 alumnos: 50 + 40 = 90. En 2028, 320 en clases individuales + 100 + 80 = 500 | E1, E10 |
 | **OLP2.** S/300 000 de ingresos promedio al mes en 2028 | **OCP2.1.** Llegar a S/262 700 de ingresos promedio al mes en 2027 | 230 000 × 1.142 = 262 700 | E1, E2, E10 |
 | | **OCP2.2.** Que la nivelación y los grupos den el 10 % de los ingresos en 2027 y el 20 % en 2028 | 0.10 × 262 700 = S/26 270 al mes en 2027 y 0.20 × 300 000 = S/60 000 al mes en 2028 | E1, E10 |
@@ -64,7 +64,7 @@ En 2027 la meta es 25 × 0.447 = 11 de cada 100, y en 2028, 11 × 0.447 = 5 de c
 | | **OCP3.2.** Que desde marzo de 2027 los 27 profesores tengan su tablero mensual de puntualidad, asistencia y cámara | 27 de 27 profesores = 100 % | E5 |
 | | **OCP3.3.** Bajar los profesores que se van de 10 a 6 en 2027 y a 4 en 2028 | 10 / 27 = 37 %, 6 / 27 = 22 % y 4 / 27 = 15 % | E5 |
 
-*Nota.* Elaboración propia. El precio de S/25 por alumno en grupo es una propuesta mía para la estrategia E10.
+*Nota.* Elaboración propia. El precio de S/25 por alumno en grupo es una propuesta mía para la estrategia E10. En la empresa ya probamos cobrar S/35 por alumno en grupo y no funcionó, por eso propongo un precio más bajo.
 
 ## 4.1. Matriz de estrategias versus objetivos de largo plazo MEOLP
 
