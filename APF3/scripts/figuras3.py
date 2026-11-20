@@ -8,7 +8,7 @@ from matplotlib.patches import FancyBboxPatch
 PPT = len(sys.argv) > 1 and sys.argv[1] == 'ppt'
 plt.rcParams['font.family'] = 'DejaVu Sans' if PPT else 'DejaVu Serif'
 SUF = '_ppt' if PPT else ''
-FS = 8.5 if PPT else 10.5
+FS = 11 if PPT else 10.5
 OSC, CLA, ACE, BORDE = ('#071D36', '#DFF3FA', '#2E86C1', '#102A43') if PPT else ('#1f3b73', '#EEF3F9', '#c8102e', '#333333')
 
 
@@ -58,7 +58,7 @@ def organigrama(nombre, nodos, lineas, alto=6):
         ax.plot([xa, xa, xb, xb], [ya, ym, ym, yb], color=BORDE, lw=1, zorder=0)
     for k, (x, y, w, h, t, estilo) in nodos.items():
         fill, color, edge = {'osc': (OSC, 'white', OSC), 'cla': (CLA, OSC, CLA), 'nuevo': ('white', OSC, ACE), 'base': ('white', OSC, BORDE)}[estilo]
-        caja(ax, x, y, w, h, t, fill=fill, color=color, edge=edge, size=FS + (1.5 if not PPT else 0), bold=estilo == 'osc')
+        caja(ax, x, y, w, h, t, fill=fill, color=color, edge=edge, size=FS + 1.5, bold=estilo == 'osc')
     fig.tight_layout(); fig.savefig(f'figuras/{nombre}{SUF}.png', dpi=200)
 
 
