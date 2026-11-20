@@ -8,6 +8,7 @@ from matplotlib.patches import FancyBboxPatch
 PPT = len(sys.argv) > 1 and sys.argv[1] == 'ppt'
 plt.rcParams['font.family'] = 'DejaVu Sans' if PPT else 'DejaVu Serif'
 SUF = '_ppt' if PPT else ''
+FS = 8.5 if PPT else 10.5
 OSC, CLA, ACE, BORDE = ('#071D36', '#DFF3FA', '#2E86C1', '#102A43') if PPT else ('#1f3b73', '#EEF3F9', '#c8102e', '#333333')
 
 
@@ -35,7 +36,7 @@ P = {
     'AC1': (5.55, 1.45, 'AC1. Tablero mensual\npor profesor'), 'AC2': (3.0, 1.45, 'AC2. Retener a los\nbuenos profesores'), 'AC3': (8.4, 1.45, 'AC3. Profesores formados\nen grupo y nivelación'),
 }
 for k, (x, y, t) in P.items():
-    caja(ax, x, y, W, H, t, fill=OSC, color='white', size=8.5, edge=OSC)
+    caja(ax, x, y, W, H, t, fill=OSC, color='white', size=FS, edge=OSC)
 rel = [('AC1', 'PI1'), ('AC2', 'PI1'), ('AC3', 'PI2'), ('PI1', 'CL1'), ('PI2', 'CL3'), ('PI3', 'CL2'), ('CL2', 'CL1'), ('CL3', 'CL1'), ('CL1', 'FI1'), ('CL3', 'FI2'), ('FI2', 'FI1')]
 for a, b in rel:
     xa, ya, _ = P[a]; xb, yb, _ = P[b]
@@ -57,25 +58,30 @@ def organigrama(nombre, nodos, lineas, alto=6):
         ax.plot([xa, xa, xb, xb], [ya, ym, ym, yb], color=BORDE, lw=1, zorder=0)
     for k, (x, y, w, h, t, estilo) in nodos.items():
         fill, color, edge = {'osc': (OSC, 'white', OSC), 'cla': (CLA, OSC, CLA), 'nuevo': ('white', OSC, ACE), 'base': ('white', OSC, BORDE)}[estilo]
-        caja(ax, x, y, w, h, t, fill=fill, color=color, edge=edge, size=8.5, bold=estilo == 'osc')
+        caja(ax, x, y, w, h, t, fill=fill, color=color, edge=edge, size=FS + (1.5 if not PPT else 0), bold=estilo == 'osc')
     fig.tight_layout(); fig.savefig(f'figuras/{nombre}{SUF}.png', dpi=200)
 
 
 organigrama('organigrama_actual', {
-    'G': (5, 5.2, 2.8, 0.8, 'Gerencia\n2 personas', 'osc'),
-    'M': (1.7, 3.5, 2.6, 0.9, 'Marketing\nlo dirige el fundador', 'cla'),
-    'V': (5, 3.5, 2.6, 0.9, 'Comercial y ventas\nlíder de ventas, 6 personas', 'cla'),
-    'A': (8.3, 3.5, 2.6, 0.9, 'Académica\ngrupo de dirección, 5 personas\nsin líder fijo', 'cla'),
-    'P': (8.3, 1.6, 2.6, 0.9, '27 profesores', 'base'),
-}, [('G', 'M'), ('G', 'V'), ('G', 'A'), ('A', 'P')], alto=6)
+    'G': (5, 6.2, 2.8, 0.8, 'Gerencia\n2 personas', 'osc'),
+    'M': (1.6, 4.5, 2.6, 0.9, 'Marketing\nlo dirige el fundador', 'cla'),
+    'V': (5, 4.5, 2.6, 0.9, 'Comercial y ventas\n6 personas', 'cla'),
+    'A': (8.3, 4.5, 2.8, 0.9, 'Académica\n5 personas, sin jefe único', 'cla'),
+    'R1': (3.5, 2.6, 1.7, 0.95, 'Revisión\nde clases', 'base'),
+    'R2': (5.4, 2.6, 1.7, 0.95, 'Seguimiento\nde clases', 'base'),
+    'R3': (7.3, 2.6, 1.7, 0.95, 'Creación\nde talleres', 'base'),
+    'R4': (9.15, 2.6, 1.6, 0.95, 'Capacitación\nde profesores', 'base'),
+    'P': (4.45, 0.8, 2.4, 0.8, '27 profesores', 'base'),
+}, [('G', 'M'), ('G', 'V'), ('G', 'A'), ('A', 'R1'), ('A', 'R2'), ('A', 'R3'), ('A', 'R4'), ('R1', 'P'), ('R2', 'P')], alto=7)
 
 organigrama('organigrama_nuevo', {
     'G': (5, 7.2, 2.8, 0.8, 'Gerencia general', 'osc'),
-    'M': (1.45, 5.5, 2.5, 1.0, 'Marketing y datos\nE2 · campañas y\ndiagnóstico', 'nuevo'),
-    'V': (4.1, 5.5, 2.3, 1.0, 'Ventas\nE2 · seguimiento\na interesados', 'cla'),
-    'A': (7.0, 5.5, 2.8, 1.0, 'Coordinación académica\nlíder fijo', 'nuevo'),
-    'C': (4.6, 3.3, 2.1, 1.05, 'Calidad docente\nE5 · tablero,\nbono y rotación', 'nuevo'),
-    'D': (7.0, 3.3, 2.0, 1.05, 'Diseño de\nprogramas\nE1 · E10', 'nuevo'),
-    'S': (9.1, 3.3, 1.7, 1.05, 'Asesores\nacadémicos', 'cla'),
-    'P': (4.6, 1.4, 2.1, 0.9, '27 profesores', 'base'),
-}, [('G', 'M'), ('G', 'V'), ('G', 'A'), ('A', 'C'), ('A', 'D'), ('A', 'S'), ('C', 'P')], alto=8)
+    'M': (1.35, 5.5, 2.3, 1.0, 'Marketing y datos\nE2 · campañas y\ndiagnóstico', 'nuevo'),
+    'V': (3.85, 5.5, 2.2, 1.0, 'Ventas\nE2 · seguimiento\na interesados', 'cla'),
+    'A': (6.9, 5.5, 2.8, 1.0, 'Coordinación académica\nfija', 'nuevo'),
+    'C': (2.6, 3.3, 1.85, 1.15, 'Calidad docente\nE5 · revisión,\ntablero y bono', 'nuevo'),
+    'S': (4.65, 3.3, 1.85, 1.15, 'Seguimiento\nde clases y\nasesores', 'cla'),
+    'D': (6.7, 3.3, 1.85, 1.15, 'Diseño de\nprogramas\nE1 · E10', 'nuevo'),
+    'K': (8.75, 3.3, 1.85, 1.15, 'Capacitación\nde profesores', 'cla'),
+    'P': (2.6, 1.4, 2.1, 0.9, '27 profesores', 'base'),
+}, [('G', 'M'), ('G', 'V'), ('G', 'A'), ('A', 'C'), ('A', 'S'), ('A', 'D'), ('A', 'K'), ('C', 'P')], alto=8)
